@@ -1,0 +1,13 @@
+# Development files
+*.swp
+*.pyc
+*.npy
+*.t7
+dataset
+logs
+*.sh
+*.log
+*.pt
+*.png
+*.jpg
+*.pt
