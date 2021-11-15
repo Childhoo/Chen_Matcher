@@ -14,7 +14,7 @@ Please note that this repository is built based on affnet (see affnet here: http
 # Required packages
 
 The required packages for running the code are:
-pytorch 1.5
+pytorch 0.4.1
 
 For install guide, please refer to affnet repository for further details.
 
