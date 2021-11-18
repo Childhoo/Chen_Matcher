@@ -27,7 +27,7 @@ Output: feature file and raw feature matching results.
 ## run networks to extract features and descriptors, and then match
 
 ### Run the (MMG) MoNet-MGNET-WeMNet
-Thesis_test_affnet_match_features_isprsimageblocks.py 
+python Thesis_test_affnet_match_features_isprsimageblocks.py 
 
 ### Run the (FuW) FullAffNet-WeMNet
-Thesis_test_affnet_match_features_isprsimageblocks.py 
+python Thesis_test_affnet_match_features_isprsimageblocks.py 
