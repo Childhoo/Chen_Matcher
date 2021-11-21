@@ -48,13 +48,6 @@ python Thesis_test_affnet_match_features_isprsimageblocks.py --weightd_fname_aff
 python Thesis_test_affnet_match_features_isprsimageblocks.py  --weightd_fname_affnet=./logs/fullaff_aerialgraz_lr005_12M_40ep_aswap_05012021_moreepochs_HardNetLoss_WeakMatchHardnet_Momentum_ratio_skew_MeanGradDir_AffNetFast4RotNosc_6Brown_HardNet_0.005_12000000_HardNet/checkpoint_22.pth --descriptor_model_weights=logs/DescNetNet_BadSampler_WeakMatch_lr005_30M_20ep_aswap_13082020_5.0WeakLoss_6Brown_AffNetFast_6Brown_HardNet_0.05_30000000_HardNet/checkpoint_desc_9.pth --method_name=HFuW-Graz --aff_type=FullAffine --desc_type=WemNet --aff_type=FullAffine --GT_match_threshold=1.0
 
 
-# Variant: BSS
-python Thesis_test_affnet_match_features_isprsimageblocks.py --aff_type=Baumberg --orinet_type=SIFT --desc_type=SIFT --method_name=HBSS --GT_match_threshold=1.0 run_on_tile=False
 
 
 
-### Run the (MMG) MoNet-MGNET-WeMNet
-python Thesis_test_affnet_match_features_isprsimageblocks.py 
-
-### Run the (FuW) FullAffNet-WeMNet
-python Thesis_test_affnet_match_features_isprsimageblocks.py 
