@@ -3,7 +3,7 @@ This repository is the project code for the following paper:
 
 Lin Chen, Christian Heipke, Deep Learning Feature Representation for Image Matching under Large Viewpoint and Viewing Direction Change. (Under review)
 
-and it is built on top of the following thesis:
+which is a compact version of the following thesis:
 
 Chen, L. (2021): Deep Learning for Feature based Image Matching. Wissenschaftliche Arbeiten der Fachrichtung Geodäsie und Geoinformatik der Leibniz Universität Hannover, ISSN 0065-5325, Nr. 369), Dissertation, Hannover, 2021. (paper form)
 
