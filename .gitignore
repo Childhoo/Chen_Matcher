@@ -4,7 +4,6 @@
 *.npy
 *.t7
 dataset
-logs
 *.sh
 *.log
 *.pt
