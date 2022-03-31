@@ -11,14 +11,15 @@ Chen, Lin: Deep learning for feature based image matching. München 2021.�
 
 Please note that this repository is built based on affnet (see affnet here: https://github.com/ducha-aiki/affnet)
 
-# Required packages
+# How to install this repo?
+>=Python 3.6 is required
 
 The required packages for running the code are:
--matplotlib
--tqdm
--opencv-python
--scipy
--seaborn
+- matplotlib
+- tqdm
+- opencv-python
+- scipy
+- seaborn
 
 to install the above packages, run
 
@@ -40,9 +41,9 @@ Process: detect Hessian feature, estimate feature affine shape and assign featur
 Output: feature file and raw feature matching results.
 
 The important arguments for run the command line are:
--image_directory (dir where images are stored) 
--base_directory (dir when result files [detected features and descriptor, matching files] should be stored)
--img_suffix_type (img format, e.g., .jpg, .tif)
+- image_directory (dir where images are stored) 
+- base_directory (dir when result files [detected features and descriptor, matching files] should be stored)
+- img_suffix_type (img format, e.g., .jpg, .tif)
 
 
 ## run networks to extract features and descriptors, and then match
