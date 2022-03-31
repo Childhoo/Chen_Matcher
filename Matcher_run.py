@@ -63,7 +63,7 @@ import seaborn as sns
 from Losses import distance_matrix_vector
 from ReprojectionStuff import get_GT_correspondence_indexes, reprojectLAFs
 from HandCraftedModules import HessianResp, AffineShapeEstimator, OrientationDetector, ScalePyramid, NMS3dAndComposeA
-
+import glob
 
 USE_CUDA = True
 parser = argparse.ArgumentParser(description='PyTorch AffNet')
@@ -141,7 +141,6 @@ elif args.aff_type == "AffNet":
     AffNetPix.load_state_dict(checkpoint['state_dict'])
     AffNetPix.eval()
 elif args.aff_type == "Baumberg":
-    #for this hand crafted one, more iterations should be considered
     AffNetPix = AffineShapeEstimator(patch_size=19)
 else:
     print("unknown affnet type, please check!")
@@ -180,8 +179,6 @@ def get_geometry_and_descriptors_response(img, det, desc):
 
 def detect_feature_descriptor_from_tile(img, detector, descriptor,\
                                         wid_num=2, heig_num = 2,):
-    #first divide images into tiles
-#    img_tiles = []
     width_step = int(img.shape[3]/2)
     height_step = int(img.shape[2]/2)
     for ii in range(wid_num):
@@ -209,18 +206,22 @@ def detect_feature_descriptor_from_tile(img, detector, descriptor,\
     return LAFs, desc #, res_all
 
 
-directory = r"E:/eval_image_blocks/isprsdata/only_nadir/block3/images/"
-directory_base = r"E:/eval_image_blocks/isprsdata/only_nadir/block3/"
-
+#directory = r"E:/eval_image_blocks/isprsdata/only_nadir/block3/images/"
+#directory_base = r"E:/eval_image_blocks/isprsdata/only_nadir/block3/"
+directory = args.image_directory
+directory_base = args.base_directory
 
 all_desc=[] 
 all_feat=[] #list to store all features/descriptors for later matching stage
-import glob
-output_feature_dir = directory_base+ "features_computed/"+args.method_name
+
+if not os.path.exists(os.path.join(directory_base, "features_computed")):
+    os.mkdir(os.path.join(directory_base, "features_computed")) 
+    
+output_feature_dir = os.path.join(directory_base, "features_computed", args.method_name)
 if not os.path.exists(output_feature_dir):
     os.mkdir(output_feature_dir) 
 
-for filename in glob.glob(directory+"*.tif"):
+for filename in glob.glob(os.path.join(directory, "*" + args.img_suffix_type)):
     img = load_grayscale_var(filename)
     
     if args.run_on_tile:
@@ -278,7 +279,7 @@ for filename in glob.glob(directory+"*.tif"):
 
 
 
-img_names =  [os.path.basename(x) for x in glob.glob(directory+"*.tif")]
+img_names =  [os.path.basename(x) for x in glob.glob(os.path.join(directory, "*" + args.img_suffix_type))]
 num_images = len(img_names)
 # after extracting feature/descriptors, match the extracted features
 
@@ -328,7 +329,7 @@ with open(out_file_match_name, 'a') as the_file:
             else:
                 the_file.write('\n')
                 
-        print("matching done! for image", i)
+        print("ratio based matching done! for image", i)
             
     
 matching_strategy = "nn_distance"  #or "nn_distance"
@@ -375,4 +376,4 @@ with open(out_file_match_name, 'a') as the_file:
             else:
                 the_file.write('\n')
                 
-        print("matching done! for image", i)
+        print("NN based matching done! for image", i)

@@ -154,7 +154,8 @@ class ScaleSpaceAffinePatchExtractor(nn.Module):
         else:
             idxs_mask =  checkTouchBoundary(new_LAFs)
         num_survived = idxs_mask.float().sum()
-        if (num_features > 0) and (num_survived.data[0] > num_features):
+        #if (num_features > 0) and (num_survived.data[0] > num_features):
+        if (num_features > 0) and (num_survived > num_features):
             final_resp =  final_resp * idxs_mask.float() #zero bad points
             final_resp, idxs = torch.topk(final_resp, k = num_features);
         else:

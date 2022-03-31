@@ -22,3 +22,5 @@ python Thesis_test_affnet_match_features_isprsimageblocks.py  --weightd_fname_af
 
 # Variant: BSS
 python Thesis_test_affnet_match_features_isprsimageblocks.py --aff_type=Baumberg --orinet_type=SIFT --desc_type=SIFT --method_name=HBSS --GT_match_threshold=1.0 run_on_tile=False
+
+python Matcher_run.py --aff_type=Baumberg --orinet_type=SIFT --desc_type=SIFT --method_name=HBSS --GT_match_threshold=1.0 --run_on_tile=False --image_directory=E://eval_image_blocks/isprsdata/block1/images --base_directory=E://eval_image_blocks/isprsdata/block1 --img_suffix_type=.tif 
