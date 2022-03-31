@@ -1,0 +1,5 @@
+matplotlib
+tqdm
+opencv-python
+scipy
+seaborn
