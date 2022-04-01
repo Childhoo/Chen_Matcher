@@ -11,7 +11,7 @@ which is a compact version of the following thesis:
 Please note that this repository is built based on affnet (see affnet here: https://github.com/ducha-aiki/affnet)
 
 # How to install this repo?
->=Python 3.6 is required
+Python 3.6 or higher version is required
 
 The required packages for running the code are:
 - matplotlib
@@ -43,7 +43,9 @@ For more information about how to install torch, please refer to pytorch officia
 4. nearest neigbour / NN ratio based feature matching
 
 **Output:**
-- feature file and raw feature matching results.
+- feature file for each input image [position_x, position_y, scale, orientation, 128D descriptor]
+- raw feature matching results. 
+The raw matching file is in the format of: left image, right image and then each row represents the matching pair composed of [feature_ind on left image, feature_ind on right image]
 
 # Usage Examples
 
