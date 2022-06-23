@@ -1,6 +1,6 @@
 # Related Paper
 This repository is the project code for the following paper:
-*Lin Chen, Christian Heipke, Deep Learning Feature Representation for Image Matching under Large Viewpoint and Viewing Direction Change. (Under review)*
+*Chen, Lin, and Christian Heipke. "Deep learning feature representation for image matching under large viewpoint and viewing direction change." ISPRS Journal of Photogrammetry and Remote Sensing 190 (2022): 94-112.*
 
 which is a compact version of the following thesis:
 
@@ -9,6 +9,8 @@ which is a compact version of the following thesis:
 *Chen, Lin: Deep learning for feature based image matching. München 2021. Deutsche Geodätische Kommission: C (Dissertationen): Heft Nr. 867. https://publikationen.badw.de/de/047233519 (digital form)*
 
 Please note that this repository is built based on affnet (see affnet here: https://github.com/ducha-aiki/affnet)
+
+Please kindly cite the above journal paper / PhD dissertation if you employ this repository.
 
 # How to install this repo?
 Python 3.6 or higher version is required
